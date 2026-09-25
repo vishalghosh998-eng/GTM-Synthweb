@@ -30,3 +30,58 @@ This repository is an evidence-first outbound GTM system for SynthWeb. Skills un
 - `shared/conventions.md`: run, checkpoint, and record conventions
 - `context/company/approved-claims.md`: permitted SynthWeb claims
 - `context/icp/signal-taxonomy.md`: signal definitions and confidence rules
+
+## Mandatory Workflow and Approval Gates
+
+Claude must follow the workflow stages in order unless the operator explicitly authorizes a documented exception.
+
+### Required workflow
+
+1. Router and task classification
+2. Cost estimation and approval check
+3. Lead intake and normalization
+4. Company and contact qualification
+5. Evidence extraction
+6. Signal classification
+7. ICP scoring and service-fit assessment
+8. Contact resolution
+9. Outreach drafting
+10. Outreach QA
+11. Suppression and compliance checks
+12. Human approval
+13. Export to an outreach platform
+14. Reply tracking and learning feedback
+
+### Enforcement requirements
+
+- Claude must not skip a required stage silently.
+- Every stage must record its status: `not_started`, `in_progress`, `completed`, `blocked`, or `failed`.
+- A stage cannot be marked `completed` without its required output.
+- A failed or blocked stage must include an error, reason, and next action.
+- Records with missing mandatory evidence must not proceed to outreach drafting.
+- Records must not be exported to ReachInbox or another outreach platform unless:
+  - Required evidence exists.
+  - Contact identity has been verified or explicitly marked unknown.
+  - Outreach QA has passed.
+  - Suppression checks have passed.
+  - Human approval has been recorded.
+- Claude must never treat a draft as approved merely because it was generated successfully.
+- Claude must never send outreach automatically during the pilot phase.
+- Approval must be recorded in a run artifact and linked to the relevant record IDs.
+- Any manual override must include the operator, timestamp, reason, affected stage, and scope.
+- If a required gate cannot be verified, the safe outcome is `blocked`, not `approved`.
+
+### Export gate
+
+The export status must remain `blocked` unless all conditions are true:
+
+- `workflow.qa_status == "passed"`
+- `workflow.suppression_status == "passed"`
+- `approval.human_approved == true`
+- `approval.approver` is present
+- `approval.approved_at` is present
+- `contact.identity_status == "verified"` or the record is explicitly approved for manual review
+- At least one source-backed signal is available
+- No unresolved critical errors exist
+
+A record that fails any export condition must not be exported.

@@ -1,0 +1,201 @@
+[
+  {
+    "record": {
+      "record_id": "shufflrr.com-James-Ontra",
+      "company": {
+        "name": "shufflrr.com",
+        "domain": "shufflrr.com",
+        "country": "US"
+      },
+      "source": {
+        "source_type": "apollo_lusha_zoominfo_dataset",
+        "retrieved_at": "2026-09-25",
+        "name": "James Ontra",
+        "title": "CEO",
+        "domain": "shufflrr.com",
+        "industries": ["Presentation software", "Business/Productivity Software", "Developer Platform"],
+        "technologies": ["AWS", "Apache", "HubSpot", "WordPress"],
+        "employee_count": "3",
+        "funding": "$208K",
+        "funding_stage": "IPO",
+        "founded": "2014",
+        "location": "New York, US"
+      },
+      "hiring_signal": "Small team (3 employees) with $208K funding and IPO stage - signaling growth phase and potential hiring needs. Technologies include AWS and Apache.",
+      "research": {
+        "enrichment_needed": true,
+        "notes": ["Could benefit from LinkedIn analysis for engineering hiring signals"]
+      }
+    },
+    "qualification": {
+      "result": "qualified",
+      "checks": {
+        "geography": true,
+        "relevance": true,
+        "engineering_signal": true,
+        "source_url": true,
+        "disqualifiers": [],
+        "tech_overlap": ["AWS"]
+      },
+      "reasoning": "US geography confirmed. Shufflrr.com operates in Presentation Software/Business Productivity Software/Developer Platform - product-led SaaS/tech company. Tech stack includes AWS (match) and Apache. 3 employees with IPO stage signals growth/hiring needs. Domain available as source URL."
+    }
+  },
+  {
+    "record": {
+      "record_id": "vrcommerce.co-Amol-Sharma",
+      "company": {
+        "name": "vrcommerce.co",
+        "domain": "vrcommerce.co",
+        "country": "US"
+      },
+      "source": {
+        "source_type": "apollo_lusha_zoominfo_dataset",
+        "retrieved_at": "2026-09-25",
+        "name": "Amol Sharma",
+        "title": "CEO",
+        "domain": "vrcommerce.co",
+        "industries": ["3D/AR/VR E-Commerce Platforms"],
+        "technologies": ["Apache", "GoDaddy", "Google Apps"],
+        "employee_count": "2",
+        "funding_stage": "Seed",
+        "founded": "2015",
+        "location": "San Francisco, US"
+      },
+      "hiring_signal": "Early-stage startup (2 employees, Seed stage) - typical initial hiring phase for product development in 3D/AR/VR space.",
+      "research": {
+        "enrichment_needed": true,
+        "notes": ["Could benefit from LinkedIn analysis for engineering hiring signals"]
+      }
+    },
+    "qualification": {
+      "result": "qualified",
+      "checks": {
+        "geography": true,
+        "relevance": true,
+        "engineering_signal": true,
+        "source_url": true,
+        "disqualifiers": [],
+        "tech_overlap": []
+      },
+      "reasoning": "US geography confirmed. Vrcommerce.co operates in 3D/AR/VR E-Commerce Platforms - product-led software/SaaS/tech company. Apache in tech stack provides engineering signal. 2 employees at Seed stage typical for early hiring. Domain available as source URL. No disqualifying factors."
+    }
+  },
+  {
+    "record": {
+      "record_id": "mt2.com-James-Barthel",
+      "company": {
+        "name": "mt2.com",
+        "domain": "mt2.com",
+        "country": "US"
+      },
+      "source": {
+        "source_type": "apollo_lusha_zoominfo_dataset",
+        "retrieved_at": "2026-09-25",
+        "name": "James Barthel",
+        "title": "CEO",
+        "domain": "mt2.com",
+        "industries": "NO industry",
+        "technologies": "NO technologies",
+        "description": "NO description",
+        "email": "unavailable",
+        "location": "Denver, US"
+      },
+      "hiring_signal": "No data available - industry, technologies, and description all marked as NO.",
+      "research": {
+        "enrichment_needed": false,
+        "notes": []
+      }
+    },
+    "qualification": {
+      "result": "rejected",
+      "checks": {
+        "geography": true,
+        "relevance": false,
+        "engineering_signal": false,
+        "source_url": true,
+        "disqualifiers": [],
+        "tech_overlap": []
+      },
+      "reasoning": "US geography confirmed, but company has NO industry, NO technologies, and NO description - cannot determine product-led software/SaaS/tech relevance. No engineering hiring evidence. Source URL available (domain mt2.com) but insufficient data for qualification."
+    }
+  },
+  {
+    "record": {
+      "record_id": "ewarenow.com-Douglass-Maclean",
+      "company": {
+        "name": "ewarenow.com",
+        "domain": "ewarenow.com",
+        "country": "US"
+      },
+      "source": {
+        "source_type": "apollo_lusha_zoominfo_dataset",
+        "retrieved_at": "2026-09-25",
+        "name": "Douglass Maclean",
+        "title": "CEO",
+        "domain": "ewarenow.com",
+        "industries": "NO industry",
+        "technologies": "NO technologies",
+        "description": "NO description",
+        "email": "unavailable",
+        "location": "Boston, US"
+      },
+      "hiring_signal": "No data available - industry, technologies, and description all marked as NO.",
+      "research": {
+        "enrichment_needed": false,
+        "notes": []
+      }
+    },
+    "qualification": {
+      "result": "rejected",
+      "checks": {
+        "geography": true,
+        "relevance": false,
+        "engineering_signal": false,
+        "source_url": true,
+        "disqualifiers": [],
+        "tech_overlap": []
+      },
+      "reasoning": "US geography confirmed, but company has NO industry, NO technologies, and NO description - cannot determine product-led software/SaaS/tech relevance. No engineering hiring evidence. Source URL available (domain ewarenow.com) but insufficient data for qualification."
+    }
+  },
+  {
+    "record": {
+      "record_id": "royaloakfamilydentistry.com-Dan-Costello",
+      "company": {
+        "name": "royaloakfamilydentistry.com",
+        "domain": "royaloakfamilydentistry.com",
+        "country": "US"
+      },
+      "source": {
+        "source_type": "apollo_lusha_zoominfo_dataset",
+        "retrieved_at": "2026-09-25",
+        "name": "Dan Costello",
+        "title": "CEO",
+        "domain": "royaloakfamilydentistry.com",
+        "industries": "Dental/Health/Wellness",
+        "technologies": ["Apache", "WordPress", "Google Analytics"],
+        "employee_count": "50",
+        "revenue": "$10M",
+        "founded": "1986",
+        "location": "Detroit, US"
+      },
+      "hiring_signal": "Established business (50 employees, $10M revenue, founded 1986) - mature company with potential ongoing hiring needs in healthcare sector.",
+      "research": {
+        "enrichment_needed": false,
+        "notes": []
+      }
+    },
+    "qualification": {
+      "result": "rejected",
+      "checks": {
+        "geography": true,
+        "relevance": false,
+        "engineering_signal": false,
+        "source_url": true,
+        "disqualifiers": ["healthcare"],
+        "tech_overlap": []
+      },
+      "reasoning": "US geography confirmed, but company operates in Dental/Health/Wellness - explicit non-tech disqualifier (healthcare). Despite having tech stack (Apache, WordPress, Google Analytics), the healthcare classification overrides other signals. No technology overlap with SynthWeb verified capabilities (React, Next.js, Node.js, Python, AWS, GCP, PostgreSQL)."
+    }
+  }
+]

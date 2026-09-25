@@ -1,0 +1,444 @@
+﻿{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://synthweb.local/schemas/prospect-record.json",
+  "title": "SynthWeb GTM Prospect Record",
+  "description": "Evidence-first prospect record for the SynthWeb GTM workflow.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "record_id",
+    "company",
+    "contact",
+    "evidence",
+    "signals",
+    "scoring",
+    "provenance",
+    "workflow",
+    "errors",
+    "approval"
+  ],
+  "properties": {
+    "record_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "company": {
+      "type": "object",
+      "required": [
+        "name",
+        "identity_status"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "domain": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "country": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "industry": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "identity_status": {
+          "type": "string",
+          "enum": [
+            "verified",
+            "partially_verified",
+            "unverified",
+            "unknown"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "contact": {
+      "type": "object",
+      "required": [
+        "identity_status"
+      ],
+      "properties": {
+        "full_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "job_title": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "email": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "linkedin_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "identity_status": {
+          "type": "string",
+          "enum": [
+            "verified",
+            "partially_verified",
+            "unverified",
+            "unknown"
+          ]
+        },
+        "verification_source": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "claim",
+          "classification",
+          "source_url",
+          "retrieved_at",
+          "confidence"
+        ],
+        "properties": {
+          "claim": {
+            "type": "string",
+            "minLength": 1
+          },
+          "classification": {
+            "type": "string",
+            "enum": [
+              "observed_fact",
+              "calculated_fact",
+              "hypothesis",
+              "recommendation",
+              "unknown"
+            ]
+          },
+          "source_url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "published_at": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "retrieved_at": {
+            "type": "string",
+            "minLength": 1
+          },
+          "provider": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low",
+              "unknown"
+            ]
+          },
+          "notes": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "signals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "signal_type",
+          "confidence",
+          "evidence_refs"
+        ],
+        "properties": {
+          "signal_type": {
+            "type": "string",
+            "enum": [
+              "HIRING_ACTIVE",
+              "HIRING_PERSISTENT",
+              "HIRING_MULTIPLE",
+              "TECH_MATCH",
+              "PRODUCT_EXPANSION",
+              "CONTRACTOR_OR_DISTRIBUTED",
+              "EXPLICIT_PAIN",
+              "UNKNOWN"
+            ]
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low",
+              "unknown"
+            ]
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "notes": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "scoring": {
+      "type": "object",
+      "required": [
+        "total",
+        "components",
+        "decision"
+      ],
+      "properties": {
+        "total": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "components": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+          }
+        },
+        "decision": {
+          "type": "string",
+          "enum": [
+            "priority_review",
+            "additional_research",
+            "nurture",
+            "reject",
+            "unknown"
+          ]
+        },
+        "reasoning": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "created_at",
+        "last_updated_at"
+      ],
+      "properties": {
+        "created_at": {
+          "type": "string",
+          "minLength": 1
+        },
+        "last_updated_at": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_providers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "source_urls": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "created_by": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "last_updated_by": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "workflow": {
+      "type": "object",
+      "required": [
+        "status",
+        "current_stage",
+        "qa_status",
+        "suppression_status"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "not_started",
+            "in_progress",
+            "blocked",
+            "completed",
+            "failed",
+            "rejected"
+          ]
+        },
+        "current_stage": {
+          "type": "string",
+          "minLength": 1
+        },
+        "completed_stages": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "qa_status": {
+          "type": "string",
+          "enum": [
+            "not_run",
+            "passed",
+            "failed",
+            "blocked"
+          ]
+        },
+        "suppression_status": {
+          "type": "string",
+          "enum": [
+            "not_run",
+            "passed",
+            "failed",
+            "blocked",
+            "unknown"
+          ]
+        },
+        "export_status": {
+          "type": "string",
+          "enum": [
+            "not_ready",
+            "blocked",
+            "approved",
+            "exported"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "stage",
+          "error_class",
+          "retryable",
+          "message",
+          "next_action"
+        ],
+        "properties": {
+          "stage": {
+            "type": "string",
+            "minLength": 1
+          },
+          "error_class": {
+            "type": "string",
+            "minLength": 1
+          },
+          "retryable": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "minLength": 1
+          },
+          "next_action": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "approval": {
+      "type": "object",
+      "required": [
+        "human_approved"
+      ],
+      "properties": {
+        "human_approved": {
+          "type": "boolean"
+        },
+        "approver": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "approved_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "approval_scope": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "override_reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}
