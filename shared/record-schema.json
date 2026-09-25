@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["record_id", "company", "workflow"],
+  "properties": {
+    "record_id": {"type": "string", "minLength": 1},
+    "company": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {"type": "string"},
+        "domain": {"type": ["string", "null"]},
+        "country": {"type": ["string", "null"]}
+      },
+      "additionalProperties": true
+    },
+    "source": {"type": "object", "additionalProperties": true},
+    "hiring_signal": {"type": "object", "additionalProperties": true},
+    "research": {"type": "object", "additionalProperties": true},
+    "contact": {"type": "object", "additionalProperties": true},
+    "service_fit": {"type": "object", "additionalProperties": true},
+    "scoring": {"type": "object", "additionalProperties": true},
+    "outreach": {"type": "object", "additionalProperties": true},
+    "cost": {"type": "object", "additionalProperties": true},
+    "workflow": {
+      "type": "object",
+      "required": ["status"],
+      "properties": {"status": {"type": "string"}},
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

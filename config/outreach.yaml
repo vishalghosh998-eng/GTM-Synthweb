@@ -1,0 +1,8 @@
+approval_mode: human
+max_first_email_words: 75
+max_followup_words: 60
+max_primary_signals: 1
+max_insights: 1
+require_source_backed_signal: true
+require_qa_pass: true
+require_suppression_check: true

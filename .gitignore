@@ -1,0 +1,15 @@
+# secrets
+.env
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# runtime
+runs/*
+!runs/.gitkeep
+
+# local files
+.DS_Store
+.idea/
+.vscode/

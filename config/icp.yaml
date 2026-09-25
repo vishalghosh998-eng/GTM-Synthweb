@@ -1,0 +1,8 @@
+campaign: synthweb_engineering_capacity_v1
+geographies: [US, GB]
+primary_offer: engineering_pods
+secondary_offers: [custom_software_development, mvp_sprint]
+primary_signals: [HIRING_ACTIVE, TECH_MATCH, HIRING_MULTIPLE, PRODUCT_EXPANSION]
+minimum_evidence_items: 2
+require_source_url: true
+require_human_approval: true

@@ -1,0 +1,16 @@
+weights:
+  icp_fit: 20
+  service_fit: 20
+  signal_strength: 25
+  evidence_quality: 15
+  contact_relevance: 10
+  commercial_indicators: 10
+thresholds:
+  priority_review: 80
+  additional_research: 60
+  nurture: 40
+  reject_below: 40
+scoring_rules:
+  unknown_is_zero: true
+  unsupported_inference_is_zero: true
+  hiring_age_alone_is_not_hiring_failure: true
