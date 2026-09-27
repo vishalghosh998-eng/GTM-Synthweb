@@ -1,0 +1,56 @@
+campaign_id: synthweb-engineering-capacity-pilot
+objective: "Identify companies with public evidence of active engineering expansion where SynthWeb's software engineering or staff augmentation services may be relevant."
+
+target_market:
+  geography:
+    include: ["US", "UK"]
+  company_types: ["B2B software companies"]
+  exclusions:
+    - "Custodians"
+    - "Private equity firms"
+    - "Family offices"
+
+buyer_roles:
+  preferred:
+    - "Founder"
+    - "CEO"
+    - "CTO"
+    - "VP Engineering"
+    - "Head of Engineering"
+
+signals:
+  required:
+    - name: HIRING_ACTIVE
+      definition: "Current public evidence of one or more relevant engineering openings."
+      acceptable_evidence: ["Current company careers page", "Current public job posting"]
+      disallowed_inference: "Job age alone does not establish hiring difficulty."
+      minimum_confidence: medium
+
+  preferred:
+    - name: HIRING_MULTIPLE
+      definition: "Public evidence of multiple relevant engineering openings."
+    - name: TECH_MATCH
+      definition: "Public evidence that the company uses technology relevant to the campaign."
+    - name: PRODUCT_EXPANSION
+      definition: "Public evidence of a product, platform, or engineering expansion."
+
+service_fit_questions:
+  - "Is there evidence that additional engineering capacity could be relevant?"
+  - "Which SynthWeb service category, if any, maps to the observed situation?"
+  - "What evidence supports the proposed fit?"
+
+research_scope:
+  required_sources: ["Company website", "Public careers/jobs source"]
+  minimum_evidence: 1
+  stop_when_decision_sufficient: true
+
+pilot_scope:
+  records: 50
+  human_review: true
+
+budget:
+  external_spend_requires_approval: true
+  max_usd: null
+
+approval_status: pending
+open_questions: []
